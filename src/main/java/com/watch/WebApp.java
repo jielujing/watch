@@ -1,15 +1,7 @@
 package com.watch;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
 
 /**
  * 通过url或取配置文件对应的Servlet
@@ -26,7 +18,7 @@ public class WebApp {
 
 			WebHandler handler = new WebHandler();
 
-			parse.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("web.xml"), handler);
+			parse.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("/conf/web.xml"), handler);
 			context = new WebContext(handler.getEntitys(), handler.getMappings());
 		} catch (Exception e) {
 			e.printStackTrace();
