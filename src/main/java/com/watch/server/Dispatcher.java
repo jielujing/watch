@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +13,7 @@ public class Dispatcher implements Runnable {
 	public Dispatcher(Socket client) {
 		this.client = client;
 		try {
+			//初始化request和response。将输入流和参数放入request，将输出流放入response
 			request = new Request(client);
 			response = new Response(client);
 		} catch (IOException e) {
@@ -33,7 +34,7 @@ public class Dispatcher implements Runnable {
 				// 关注了状态码
 				response.pushToBrowser(200);
 			} else {
-				InputStream is =Thread.currentThread().getContextClassLoader().getResourceAsStream("error.html");
+				InputStream is =Thread.currentThread().getContextClassLoader().getResourceAsStream("page/error.html");
 				byte[] datas=new byte[1024*1024];
 				int len=is.read(datas);
 				response.print(new String(datas,0,len));

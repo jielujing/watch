@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -36,7 +36,8 @@ public class server {
 			try {
 				Socket client = serverSocket.accept();
 				System.out.println("一个客户端建立了连接");
-				new Thread(new Dispatcher(client)).start();
+				Thread thread =new Thread(new Dispatcher(client));
+				thread.start();
 			} catch (IOException e) {
 				e.printStackTrace();
 				System.out.println("客户端错误");

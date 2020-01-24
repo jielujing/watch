@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.util.HashMap;
 import java.util.List;

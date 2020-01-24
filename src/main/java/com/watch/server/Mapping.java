@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.util.HashSet;
 import java.util.Set;

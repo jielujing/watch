@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
@@ -18,7 +18,7 @@ public class WebApp {
 
 			WebHandler handler = new WebHandler();
 
-			parse.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("/conf/web.xml"), handler);
+			parse.parse(Thread.currentThread().getContextClassLoader().getResourceAsStream("conf/web.xml"), handler);
 			context = new WebContext(handler.getEntitys(), handler.getMappings());
 		} catch (Exception e) {
 			e.printStackTrace();

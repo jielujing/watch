@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,7 +36,7 @@ public class Request {
 		try {
 			this.len = is.read(datas);
 			this.requestinfo = new String(datas, 0, len);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return;
 		}
@@ -138,7 +138,7 @@ public class Request {
 	public String getMethod() {
 		return method;
 	}
-	
+
 	public String getUrl() {
 		return url;
 	}

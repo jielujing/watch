@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 
 import java.util.ArrayList;
 import java.util.List;

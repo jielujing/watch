@@ -1,4 +1,4 @@
-package com.watch;
+package com.watch.server;
 /**
  * <servlet>
   <servlet-name>login</servlet-name>
