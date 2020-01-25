@@ -10,12 +10,12 @@ import java.net.Socket;
  * @author lenovo-pc
  *
  */
-public class server {
+public class Server {
 	ServerSocket serverSocket;
 	private boolean isRunning;
 
 	public static void main(String[] args) {
-		server server = new server();
+		Server server = new Server();
 		server.start();
 	}
 
